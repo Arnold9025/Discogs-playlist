@@ -1,0 +1,115 @@
+Travail pratique - Musique
+
+Concevoir une application permettant la gestion d'une sélection. (playlist)
+
+Le projet comporte 2 parties, un serveur et un client
+
+Le serveur offre un API REST en JSON et permet une persistance dans la base de données PostgreSQL
+Le client permet la recherche de musique sur le serveur https://www.discogs.com/ et la création de liste de musique.
+
+
+Consignes générales
+    Réaliser en équipe de 2
+    Présenter en équipe le dernier jour
+    Le code copié entre 2 équipes vaut 0 point
+
+
+Consignes techniques
+    Créer un nouveau repository GIT
+    Ajouter un fichier readme.md a la racine avec le nom des membres de l'équipe.
+    Créer un compte à l'adresse suivante en utilisant le lien "Create en App" afin de générer un "token"
+        https://www.discogs.com/developers/
+
+    Utiliser les dépendances présentées lors de la formation et les 3 suivantes seulement:
+        https://www.npmjs.com/package/react-youtube
+        https://www.npmjs.com/package/disconnect
+        https://node-postgres.com/
+
+        Note:
+        Avec la dernière version de Webpack, le polyfill suivant doit être ajouté
+        et la configuration webpack doit être modifiée comme indiqué dans la documentation du polyfill
+
+            npm install node-polyfill-webpack-plugin
+            https://www.npmjs.com/package/node-polyfill-webpack-plugin
+
+
+    CORS
+        https://enable-cors.org/server_expressjs.html
+
+    Intégration graphique et CSS
+        La maquette présentée est réalisée avec Bootstrap et fontawesome
+            https://getbootstrap.com/docs/4.3/getting-started/introduction/
+            https://fontawesome.com/start
+        À vous de choisir la méthode et les outils qui vous conviennent
+        Le résultat doit être professionnel
+
+    Base de données
+        - Créer la base de données: tp_music
+        - Utiliser le fichier playlist.sql pour créer les tables et initialiser les données nécessaires.
+
+    Déploiement pour la présentation en classe
+        Le professeur exécute seulement les 3 commandes suivantes pour lancer la présentation
+        1) git clone (votre dépôt GIT)
+        2) npm install
+        3) npm run build
+        4) npm start
+
+Points importants à connaitre, mais qui ne sont pas en évaluation dans cet exercice:
+    Traitement d'exception serveur
+    Support du window.history
+    Pagination
+    Notification d'attente (spinner)
+
+
+Exemple de structure de projet
+    /travail-pratique/
+                    .gitignore
+                    .editorconfig
+
+                    package.json
+                    .eslintrc.json
+                    .babelrc
+                    webpack.config.js
+                    server.js               Serveur NodeJs pour l'API REST
+
+                    src/
+                        index.js            Point d'entrée du projet React
+                        index.html
+
+                        component/
+                        container/
+                        service/
+                        css/
+                        server/             Code utilisé par le serveur NodeJs seulement
+
+
+
+Barème de correction sur 100
+------------------------------------------------------
+
+Fonctionnement
+    Assemblage de l'application (Utilisation des outils)                        10
+
+    Recherche sur discogs et affichage des résultats                            10
+    Accès au détail d'un album à partir du résultat de la recherche             5
+    Ajout des chansons à la liste de lecture sélectionnée à partir du détail    15
+
+    Affichage du sélecteur de liste de lecture sur la barre de navigation       5
+    Affichage de la liste de lecture sélectionnée                               5
+    Bouton de navigation et écoute de la liste de lecture                       10
+
+    TOTAL : /60
+
+
+Présentation
+    Participation équipe    10
+
+    Code propre
+        structure           10
+        variable            10
+
+    Présentation
+        interface           5
+        devant la classe    5
+
+    TOTAL : /40

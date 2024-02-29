@@ -1,0 +1,37 @@
+body {
+    overflow-x: hidden;
+}
+
+.resultContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav {
+
+    background-color: bisque;
+    padding: 10px;
+}
+
+.nav>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 350px;
+
+}
+
+.input {
+    border: 1px solid grey;
+    width: 220px;
+}
+
+.inputSearch {
+    width: 400px;
+}
+
+.submit_btn {
+    @apply hover: border-gray-700 hover:text-gray-700 absolute inset-y-0 right-0 my-1.5 mr-1.5 flex w-10 items-center justify-center rounded border border-gray-200 font-sans text-sm font-medium text-gray-400;
+}
